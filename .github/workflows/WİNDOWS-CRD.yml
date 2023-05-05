@@ -1,0 +1,27 @@
+# Credits By discord.gg/babil
+# This is a basic workflow to help you get started with Actions
+
+name: Cl by meyal#0003
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'CRD Kodunuzu Girin'
+        required: true
+      pincode:
+        description: '6 Haneli Pin Kodunuzu Girin'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Kuruluma Hazırlanılıyor
+      run: ./main.ps1
+    - name: CRD Başlatılıyor 
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: Aktif Tut
+      run: ./timeout.ps1
