@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
     inputs:
       authcode:
-        description: 'CRD Kodunuzu Girin'
+        description: '& "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AbUR2VOmfVLt4AVvnaRVhYQZtYbSB4Hmj5D0BHBKo_Ezj2qdEks3CFeTOEJ89FkDn-gGMA" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME'
         required: true
       pincode:
-        description: '6 Haneli Pin Kodunuzu Girin'
+        description: '123456'
         required: true
   
 jobs:
